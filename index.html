@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="kh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Abcence form</title>
+	<!-- Include from the CDN -->
+	<script src=
+"https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+	</script>
+
+	<!-- Include locally otherwise -->
+	<!-- <script src='html2canvas.js'></script> -->
+
+<style>
+body{
+background-color: #f8f9f9;
+}
+@font-face {
+    font-family: 'Krasar';
+    src: url('../Krasar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#papper{
+margin: 10px;
+padding:10px;
+width: 95%;
+background-color: #ffffff;
+}
+#output{
+margin: auto;
+padding:10px;
+}
+
+#screenshot{
+height: 80px;
+font-size: 32px;
+font-family: 'Krasar', sans-serif;
+color:#ffffff;
+text-align: center;
+padding:20px 0px 0px 0px;
+background-color: #24292f;
+width: 50%;
+
+display: table;
+  margin: 0 auto;
+}
+.bg{
+height: 80px;
+font-size: 32px;
+font-family: 'Krasar', sans-serif;
+color:#ffffff;
+text-align: center;
+padding:20px 0px 0px 0px;
+background-color: #24292f;
+width: 100%;
+}
+input{
+font-family: 'Krasar', sans-serif;
+height: 70px;
+font-size: 32px;
+box-sizing: border-box;
+border: none;
+border-bottom: 1px dotted;
+border-radius: 0px;
+padding-left: 5px;
+width:95%;"
+}
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+td{
+font-family: 'Krasar', sans-serif;
+font-size: 32px;
+height: 80px;
+padding: 5px;
+border: 0px solid;
+}
+table{
+border: 0px solid;
+width:100%;"
+}
+</style>
+</head>
+<body>
+<!--
+<div class="bg">
+</div>
+-->
+<div id="papper">
+<br><br>
+<table>
+<tr>
+    <td style="width:250px;border: 0px;"><img src="sremeas-logo.svg" style="width:200px; hight:106px;"></td>
+    <td style="font-size: 40px;">ពាក្យ​ស្នើ​សុំ​អនុញ្ញាត​ឈប់​សម្រាក</td>
+</tr>
+</table>
+<br>
+<table>
+  <tr>
+    <td style="width:200px; ">ខ្ញុំបាទ/នាងខ្ញុំ</td>
+    <td style="width:260px;"><input style="text-align:center;" ></input></td>
+    <td style="width:70px;">តួនាទី</td>
+    <td style="width:360px;"><input style="text-align:center;"></input></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td style="width:850px;"><center>សូមគោរពជូនលោកប្រធានហាងស្រែមាស</center></td>
+  </tr>
+</table>
+<table>
+   <tr>
+   <td style="width:260px;">កម្មវត្ថុ</td>
+    <td style="width:320px;">សុំច្បាប់ឈប់សម្រាកចំនួន</td>
+	<td style="width:90px;"><input style="text-align:center;"></input></td>
+	<td>ថ្ងៃ</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td style="width:250px;">ចាប់ពីថ្ងៃទី</td>
+    <td style="width:600px;"><input ></input></td>
+  </tr>
+  <tr>
+    <td style="width:250px;">ដល់ថ្ងៃទី</td>
+    <td><input ></input></td>
+  </tr>
+  <tr>
+    <td style="width:250px;">ចូលធ្វើការវិញថ្ងៃទី</td>
+    <td><input ></input></td>
+  </tr>
+  <tr>
+    <td style="width:250px;">មូលហេតុ</td>
+    <td><input ></input></td>
+  </tr>
+ </table>
+ <br>
+<!--
+<table>
+   <tr>
+   <td style="width:20px;"></td>
+    <td style="width:680px;">ថ្ងៃឈប់សម្រាកប្រចាំឆ្នាំរបស់ខ្ញុំបាទ/នាងខ្ញុំនៅសល់ចំនួន</td>
+	<td style="width:90px;"><input style="text-align:center;"></input></td>
+	<td>ថ្ងៃ</td>
+  </tr>
+</table>
+<br><br>
+-->
+<table> 
+  <tr>
+    <td style="width:850px;"><center>សេចក្តីដូចបានជម្រាបជូនខាងលើ<br>សូមលោកប្រធានមេត្តាអនុញ្ញាតដោយក្តីអនុគ្រោះ<br>សូមលោកប្រធានទទួលនូវការគោរពដ៏ខ្ពង់ខ្ពស់អំពីខ្ញុំបាទ/នាងខ្ញុំ។<br><br></center></td>
+  </tr>
+</table>
+</div>
+
+		<div id="output"></div>
+			<button id="screenshot" onclick="takeshot()">
+			ថត Screenshot
+		</button>
+<!--
+<div class="bg">
+	សំគាល់៖ សូមបំពេញជាលេខខ្មែរ និងច្រឹបរូបភាពកុំឲ្យជាប់បន្ទាត់ពណ៌ខ្មៅ។
+</div>
+-->
+	<script type="text/javascript">
+
+		// Define the function
+		// to screenshot the div
+		function takeshot() {
+			let div =
+				document.getElementById('papper');
+
+			// Use the html2canvas
+			// function to take a screenshot
+			// and append it
+			// to the output div
+			html2canvas(div).then(
+				function (canvas) {
+					document
+					.getElementById('output')
+					.appendChild(canvas);
+					document
+					.getElementById('papper').style.display = 'none';
+					document
+					.getElementById('screenshot').style.display = 'none';
+				})
+		}
+	</script>
+</body>
+</html>
