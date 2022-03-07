@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="kh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Abcence form</title>
+<script src="https://kit.fontawesome.com/74120aa2f6.js" crossorigin="anonymous"></script>
+</head>
+<style>
+#div{
+background-color: #ffffff;
+}
+body{
+background-color: #ffffff;
+padding:10px;
+}
+@font-face {
+    font-family: 'Krasar';
+    src: url('../Krasar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sremeas';
+    src: url('../Sremeas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+#papper{
+margin: 10px;
+padding:20px;
+width: 95%;
+background-color: #ffffff;
+}
+#output{
+margin: auto;
+padding:10px;
+}
+
+#button:hover, #button:active, #button:focus {
+  background-color: #2198f9;
+  }
+
+#button{
+border-radius: 20px;
+border: 0px solid #73AD21;
+height: 100px;
+font-size: 35px;
+color:#ffffff;
+text-align: center;
+padding:10px 0px 0px 0px;
+background-color: #1876f2;
+width: 50%;
+
+display: table;
+  margin: 0 auto;
+}
+.bg{
+height: 80px;
+font-size: 32px;
+font-family: 'Krasar', sans-serif;
+color:#ffffff;
+text-align: center;
+padding:20px 0px 0px 0px;
+background-color: #24292f;
+width: 100%;
+}
+input{
+font-family: 'Krasar', sans-serif;
+height: 70px;
+font-size: 32px;
+box-sizing: border-box;
+border: none;
+border-bottom: 1px dotted;
+border-radius: 0px;
+padding-left: 5px;
+width:95%;"
+}
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+td{
+font-family: 'Krasar', sans-serif;
+font-size: 32px; 
+height: 80px;
+padding: 5px;
+border: 0px solid;
+}
+table{
+border: 0px solid;
+width:100%;"
+}
+</style>
+<body>
+	<div id ="div">
+		<div id="papper">
+			<div style="float: left; height: 220px; font-family: 'Sremeas', sans-serif;color:#ff0000; font-size:260px;">A</div>
+			<div style="text-align: center;  font-size: 40px; font-family: 'Krasar', sans-serif; padding: 100px 40px 0px 0px">ពាក្យ​ស្នើ​សុំ​អនុញ្ញាត​ឈប់​សម្រាក</div>
+			<table>
+			  <tr>
+				<td style="width:200px; ">ខ្ញុំបាទ/នាងខ្ញុំ</td>
+				<td style="width:260px;"><input style="text-align:center;" ></input></td>
+				<td style="width:70px;">តួនាទី</td>
+				<td style="width:360px;"><input style="text-align:center;"></input></td>
+			  </tr>
+			</table>
+			<table>
+			  <tr>
+				<td style="width:850px;"><center>សូមគោរពជូនលោកប្រធានហាងស្រែមាស</center></td>
+			  </tr>
+			</table>
+			<table>
+			   <tr>
+			   <td style="width:260px;">កម្មវត្ថុ</td>
+				<td style="width:320px;">សុំច្បាប់ឈប់សម្រាកចំនួន</td>
+				<td style="width:90px;"><input style="text-align:center;" value="១"></input></td>
+				<td>ថ្ងៃ</td>
+			  </tr>
+			</table>
+			<table>
+			  <tr>
+				<td style="width:250px;" >ចាប់ពីថ្ងៃទី</td>
+				<td style="width:600px;"><input type="text" id="fromDate" value=""></td>
+			  </tr>
+			  <tr>
+				<td style="width:250px;">ដល់ថ្ងៃទី</td>
+				<td><input type="text" id="toDate" value=""> </td>
+			  </tr>
+			  <tr>
+				<td style="width:250px;">ចូលធ្វើការវិញថ្ងៃទី</td>
+				<td><input type="text" id="startDate" value=""></td>
+			  </tr>
+			  <tr>
+				<td style="width:250px;">មូលហេតុ</td>
+				<td><input ></input></td>
+			  </tr>
+			 </table>
+			 <br>
+
+			<table> 
+			  <tr>
+				<td style="width:850px;"><center>សេចក្តីដូចបានជម្រាបជូនខាងលើ<br>សូមលោកប្រធានមេត្តាអនុញ្ញាតដោយក្តីអនុគ្រោះ<br>សូមលោកប្រធានទទួលនូវការគោរពដ៏ខ្ពង់ខ្ពស់អំពីខ្ញុំបាទ/នាងខ្ញុំ។<br><br></center></td>
+			  </tr>
+			</table>
+		</div>
+	</div>
+		 <br>
+		<button id="button"> <i class="fa-solid fa-crop-simple"></i> Take Screenshot </button>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+
+<script>
+	$(document).ready(function(){
+		$("#button").click(function(){
+			domtoimage.toBlob(document.getElementById('div')).then(function(blob){
+				window.saveAs(blob, "output");
+			});
+		});
+	});
+</script>
+
+
+<script>
+window.addEventListener("load", function(){
+const d = new Date();
+let month = d.getMonth();
+	switch(month) {
+  case 0:
+     document.getElementById("fromDate").defaultValue = "មករា ២០២២";
+	 document.getElementById("toDate").defaultValue = "មករា ២០២២";
+	 document.getElementById("startDate").defaultValue = "មករា ២០២២";
+    break;
+  case 1:
+     document.getElementById("fromDate").defaultValue = "កុម្ភៈ ២០២២";
+	 document.getElementById("toDate").defaultValue = "កុម្ភៈ ២០២២";
+	 document.getElementById("startDate").defaultValue = "កុម្ភៈ ២០២២";
+    break;
+  case 2:
+     document.getElementById("fromDate").defaultValue = "មីនា ២០២២";
+	 document.getElementById("toDate").defaultValue = "មីនា ២០២២";
+	 document.getElementById("startDate").defaultValue = "មីនា ២០២២";
+    break;
+  case 3:
+     document.getElementById("fromDate").defaultValue = "មេសា ២០២២";
+	 document.getElementById("toDate").defaultValue = "មេសា ២០២២";
+	 document.getElementById("startDate").defaultValue = "មេសា ២០២២";
+    break;
+  case 4:
+     document.getElementById("fromDate").defaultValue = "ឧសភា ២០២២";
+	 document.getElementById("toDate").defaultValue = "ឧសភា ២០២២";
+	 document.getElementById("startDate").defaultValue = "ឧសភា ២០២២";
+    break;
+  case 5:
+     document.getElementById("fromDate").defaultValue = "មិថុនា ២០២២";
+	 document.getElementById("toDate").defaultValue = "មិថុនា ២០២២";
+	 document.getElementById("startDate").defaultValue = "មិថុនា ២០២២";
+    break;
+  case 6:
+     document.getElementById("fromDate").defaultValue = "កក្កដា ២០២២";
+	 document.getElementById("toDate").defaultValue = "កក្កដា ២០២២";
+	 document.getElementById("startDate").defaultValue = "កក្កដា ២០២២";
+    break;
+  case 7:
+     document.getElementById("fromDate").defaultValue = "សីហា ២០២២";
+	 document.getElementById("toDate").defaultValue = "សីហា ២០២២";
+	 document.getElementById("startDate").defaultValue = "សីហា ២០២២";
+    break;
+  case 8:
+     document.getElementById("fromDate").defaultValue = "កញ្ញា ២០២២";
+	 document.getElementById("toDate").defaultValue = "កញ្ញា ២០២២";
+	 document.getElementById("startDate").defaultValue = "កញ្ញា ២០២២";
+    break;
+  case 9:
+     document.getElementById("fromtDate").defaultValue = "តុលា ២០២២";
+	 document.getElementById("toDate").defaultValue = "តុលា ២០២២";
+	 document.getElementById("startDate").defaultValue = "តុលា ២០២២";
+    break;
+  case 10:
+     document.getElementById("fromDate").defaultValue = "វិច្ឆិកា ២០២២";
+	 document.getElementById("toDate").defaultValue = "វិច្ឆិកា ២០២២";
+	 document.getElementById("startDate").defaultValue = "វិច្ឆិកា ២០២២";
+    break;
+  default:
+     document.getElementById("fromtDate").defaultValue = "ធ្នូ ២០២២";
+	 document.getElementById("toDate").defaultValue = "ធ្នូ ២០២២";
+	 document.getElementById("startDate").defaultValue = "ធ្នូ ២០២២";
+}
+});
+</script>
+
+<script>
+function takeshot() {
+
+  }
+  
+</script>
+<!--
+<script>
+	$(document).ready(function(){
+		$("#button").click(function(){
+			var node = document.getElementById('div');
+			htmlToImage.toPng(node)
+			  .then(function (dataUrl) {
+				var img = new Image();
+				img.src = dataUrl;
+				document.body.appendChild(img);
+			  })
+			  .catch(function (error) {
+				console.error('oops, something went wrong!', error);
+			  });
+		});
+	});
+</script>
+-->
+
+
+</html>
